@@ -5,14 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c01b7208-d0b9-49aa-8a90-0e2cbcff2947" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/Alarm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/Market.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/food/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/food/FoodList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/inquiry/Inquiry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/inquiry/InquiryStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/mission/Mission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/mission/ProgressingMission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/photo/Photo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/photo/PhotoType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/review/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/review/ReviewAnswers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/user/AlarmStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/user/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/user/UserType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/domain/user/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/umc/spring/global/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/umc/spring/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
