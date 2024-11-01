@@ -6,7 +6,7 @@
 *.DS_Store
 
 .yaml
-.yml
+application.yml
 HELP.md
 .gradle
 build/
