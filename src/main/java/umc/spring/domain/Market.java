@@ -12,6 +12,7 @@ import umc.spring.global.BaseEntity;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@ToString
 public class Market extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +25,6 @@ public class Market extends BaseEntity {
     private String openTime;
 
     private String closedTime;
+
+    private Integer score;
 }
