@@ -8,6 +8,6 @@ import umc.spring.domain.store.domain.Store;
 public interface StoreQueryService {
 
 	Optional<Store> findStore(Long id);
-	List<Store> findStoresByNameAndScore(String name, Float score);
+	List<Store> findStoresByNameAndScore(String storeName, Float avgRating);
 }
 

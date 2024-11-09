@@ -13,7 +13,7 @@ import umc.spring.domain.store.domain.Store;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class StoreQueryServiceImpl implements StoreQueryService{
+public class StoreQueryServiceImpl implements StoreQueryService {
 
 	private final StoreRepository storeRepository;
 
@@ -23,8 +23,8 @@ public class StoreQueryServiceImpl implements StoreQueryService{
 	}
 
 	@Override
-	public List<Store> findStoresByNameAndScore(String name, Float score) {
-		List<Store> filteredStores = storeRepository.dynamicQueryWithBooleanBuilder(name, score);
+	public List<Store> findStoresByNameAndScore(String storeName, Float avgRating) {
+		List<Store> filteredStores = storeRepository.dynamicQueryWithBooleanBuilder(storeName, avgRating);
 
 		filteredStores.forEach(store -> System.out.println("Store: " + store));
 

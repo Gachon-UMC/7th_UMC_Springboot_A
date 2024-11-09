@@ -24,7 +24,7 @@ import umc.spring.domain.store.domain.Store;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Mission {
+public class Mission{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
