@@ -1,4 +1,4 @@
-package umc.spring.domain;
+package umc.spring.domain.Alarm;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -16,7 +16,7 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QAlarm extends EntityPathBase<Alarm> {
 
-    private static final long serialVersionUID = 1141589285L;
+    private static final long serialVersionUID = -716207064L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 

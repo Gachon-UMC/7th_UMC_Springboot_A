@@ -1,11 +1,11 @@
-package umc.spring.domain;
+package umc.spring.domain.Alarm;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umc.spring.global.BaseEntity;
 import umc.spring.domain.inquiry.Inquiry;
 import umc.spring.domain.mission.Mission;
 import umc.spring.domain.user.Users;
+import umc.spring.global.BaseEntity;
 
 @Entity
 @Getter

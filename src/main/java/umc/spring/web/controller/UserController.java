@@ -6,7 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.domain.user.Users;
 import umc.spring.dto.UserRegisterDto;
-import umc.spring.service.userService.UserService;
+import umc.spring.service.UserService;
 
 @RestController
 @RequestMapping("/user")

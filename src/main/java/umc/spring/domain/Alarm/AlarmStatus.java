@@ -1,4 +1,4 @@
-package umc.spring.domain.user;
+package umc.spring.domain.Alarm;
 
 public enum AlarmStatus {
     ON, OFF

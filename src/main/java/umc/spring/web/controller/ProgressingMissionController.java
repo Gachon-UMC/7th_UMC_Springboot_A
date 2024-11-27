@@ -4,9 +4,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import umc.spring.domain.mission.ProgressingMission;
 import umc.spring.web.dto.ProgressingMissionRegisterDto;
-import umc.spring.service.progressMissionService.ProgressingMissionService;
+import umc.spring.service.ProgressingMissionService;
 import umc.spring.web.dto.ProgressingMissionResponseDto;
 
 @RestController

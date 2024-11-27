@@ -2,9 +2,10 @@ package umc.spring.domain.user;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.Alarm.AlarmStatus;
 import umc.spring.domain.food.FoodList;
 import umc.spring.global.BaseEntity;
-import umc.spring.domain.Alarm;
+import umc.spring.domain.Alarm.Alarm;
 import umc.spring.domain.inquiry.Inquiry;
 import umc.spring.domain.mission.ProgressingMission;
 import umc.spring.domain.review.Review;
