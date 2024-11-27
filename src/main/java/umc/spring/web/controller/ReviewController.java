@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.domain.review.Review;
 import umc.spring.web.dto.ReviewRegisterDto;
-import umc.spring.service.reviewService.ReviewService;
+import umc.spring.service.ReviewService;
 import umc.spring.web.dto.ReviewResponseDto;
 
 @RestController

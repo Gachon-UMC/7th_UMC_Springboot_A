@@ -24,7 +24,7 @@ public class QUsers extends EntityPathBase<Users> {
 
     public final StringPath address = createString("address");
 
-    public final ListPath<umc.spring.domain.Alarm, umc.spring.domain.QAlarm> alarmList = this.<umc.spring.domain.Alarm, umc.spring.domain.QAlarm>createList("alarmList", umc.spring.domain.Alarm.class, umc.spring.domain.QAlarm.class, PathInits.DIRECT2);
+    public final ListPath<umc.spring.domain.Alarm.Alarm, umc.spring.domain.Alarm.QAlarm> alarmList = this.<umc.spring.domain.Alarm.Alarm, umc.spring.domain.Alarm.QAlarm>createList("alarmList", umc.spring.domain.Alarm.Alarm.class, umc.spring.domain.Alarm.QAlarm.class, PathInits.DIRECT2);
 
     public final DatePath<java.time.LocalDate> birth = createDate("birth", java.time.LocalDate.class);
 
@@ -49,11 +49,11 @@ public class QUsers extends EntityPathBase<Users> {
 
     public final ListPath<umc.spring.domain.mission.ProgressingMission, umc.spring.domain.mission.QProgressingMission> progressingMissionList = this.<umc.spring.domain.mission.ProgressingMission, umc.spring.domain.mission.QProgressingMission>createList("progressingMissionList", umc.spring.domain.mission.ProgressingMission.class, umc.spring.domain.mission.QProgressingMission.class, PathInits.DIRECT2);
 
-    public final EnumPath<AlarmStatus> pushInquiryAnswer = createEnum("pushInquiryAnswer", AlarmStatus.class);
+    public final EnumPath<umc.spring.domain.Alarm.AlarmStatus> pushInquiryAnswer = createEnum("pushInquiryAnswer", umc.spring.domain.Alarm.AlarmStatus.class);
 
-    public final EnumPath<AlarmStatus> pushNewEvent = createEnum("pushNewEvent", AlarmStatus.class);
+    public final EnumPath<umc.spring.domain.Alarm.AlarmStatus> pushNewEvent = createEnum("pushNewEvent", umc.spring.domain.Alarm.AlarmStatus.class);
 
-    public final EnumPath<AlarmStatus> pushReviewAnswer = createEnum("pushReviewAnswer", AlarmStatus.class);
+    public final EnumPath<umc.spring.domain.Alarm.AlarmStatus> pushReviewAnswer = createEnum("pushReviewAnswer", umc.spring.domain.Alarm.AlarmStatus.class);
 
     public final ListPath<umc.spring.domain.review.Review, umc.spring.domain.review.QReview> reviewList = this.<umc.spring.domain.review.Review, umc.spring.domain.review.QReview>createList("reviewList", umc.spring.domain.review.Review.class, umc.spring.domain.review.QReview.class, PathInits.DIRECT2);
 

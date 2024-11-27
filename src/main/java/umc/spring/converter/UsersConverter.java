@@ -3,7 +3,7 @@ package umc.spring.converter;
 import org.springframework.stereotype.Component;
 import umc.spring.domain.user.Users;
 import umc.spring.dto.UserRegisterDto;
-import umc.spring.domain.user.AlarmStatus;
+import umc.spring.domain.Alarm.AlarmStatus;
 
 @Component
 public class UsersConverter {

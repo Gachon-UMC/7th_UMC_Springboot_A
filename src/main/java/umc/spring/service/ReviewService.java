@@ -1,4 +1,4 @@
-package umc.spring.service.reviewService;
+package umc.spring.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
