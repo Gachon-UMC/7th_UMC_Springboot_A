@@ -23,7 +23,7 @@ public class ProgressingMissionService {
     private final ProgressingMissionConverter progressingMissionConverter;
 
     @Transactional
-    public ProgressingMissionResponseDto addProgressingMission(ProgressingMissionRegisterDto dto) {
+    public ProgressingMissionResponseDto.MissionPreviewDto addProgressingMission(ProgressingMissionRegisterDto dto) {
         Users user = usersRepository.findById(dto.getUserId())
                 .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 사용자입니다."));
 
@@ -33,14 +33,12 @@ public class ProgressingMissionService {
         ProgressingMission progressingMission = progressingMissionConverter.toEntity(user, mission);
         progressingMissionRepository.save(progressingMission);
 
-        // ResponseDto 생성
-        return new ProgressingMissionResponseDto(
-                progressingMission.getId(),
-                user.getId(),
-                user.getName(),
-                mission.getId(),
-                mission.getDescription(),
-                mission.getMissionPoint()
-        );
+        // MissionPreviewDto 반환
+        return ProgressingMissionResponseDto.MissionPreviewDto.builder()
+                .description(mission.getDescription())
+                .missionPoint(mission.getMissionPoint())
+                .createdAt(mission.getCreatedAt())
+                .build();
     }
+
 }
