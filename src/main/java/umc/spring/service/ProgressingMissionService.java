@@ -41,4 +41,13 @@ public class ProgressingMissionService {
                 .build();
     }
 
+
+    @Transactional
+    public void completeProgressingMission(Long progressingMissionId) {
+        ProgressingMission progressingMission = progressingMissionRepository.findById(progressingMissionId)
+                .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 진행 중 미션입니다."));
+
+        progressingMission.complete(); // 상태를 완료로 변경
+    }
+
 }

@@ -22,4 +22,10 @@ public class ProgressingMission {
     @JoinColumn(name = "mission_id")
     private Mission mission;
 
+    @Enumerated(EnumType.STRING)
+    private ProgressStatus status; // 진행 상태 (IN_PROGRESS, COMPLETED)
+
+    public void complete() {
+        this.status = ProgressStatus.COMPLETED;
+    }
 }
