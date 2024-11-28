@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import umc.spring.domain.mission.ProgressStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,5 +32,6 @@ public class ProgressingMissionResponseDto {
         private String description; // 미션 설명
         private Integer missionPoint; // 미션 포인트
         private LocalDateTime createdAt; // 생성일
+        private ProgressStatus status; // 진행 상태 추가
     }
 }

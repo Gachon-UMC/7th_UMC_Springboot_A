@@ -25,6 +25,7 @@ public class ProgressingMissionController {
     private final MissionRepository missionRepository;
     private final ProgressingMissionRepository progressingMissionRepository;
     private final ProgressingMissionConverter progressingMissionConverter;
+    private final ProgressingMissionService progressingMissionService;
 
 
     @Transactional
@@ -44,6 +45,13 @@ public class ProgressingMissionController {
                 .missionPoint(mission.getMissionPoint())
                 .createdAt(mission.getCreatedAt())
                 .build();
+    }
+
+    @PatchMapping("/{progressingMissionId}/complete")
+    public ResponseEntity<Void> completeProgressingMission(
+            @PathVariable("progressingMissionId") Long progressingMissionId) {
+        progressingMissionService.completeProgressingMission(progressingMissionId);
+        return ResponseEntity.noContent().build(); // 상태 코드 204 반환
     }
 
 }

@@ -40,7 +40,7 @@ public class MarketService {
                 .map(mission -> new MarketResponseDto.MissionPreviewDto(
                         mission.getDescription(), // 미션 설명
                         mission.getMissionPoint(), // 미션 포인트
-                        mission.getCreatedAt() // 생성일
+                        mission.getCreatedAt()// 생성일
                 ))
                 .toList();
 

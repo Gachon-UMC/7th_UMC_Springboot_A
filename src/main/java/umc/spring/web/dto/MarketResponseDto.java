@@ -3,6 +3,7 @@ package umc.spring.web.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import umc.spring.domain.mission.ProgressStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;

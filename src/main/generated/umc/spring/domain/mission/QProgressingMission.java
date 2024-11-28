@@ -26,6 +26,8 @@ public class QProgressingMission extends EntityPathBase<ProgressingMission> {
 
     public final QMission mission;
 
+    public final EnumPath<ProgressStatus> status = createEnum("status", ProgressStatus.class);
+
     public final umc.spring.domain.user.QUsers user;
 
     public QProgressingMission(String variable) {
@@ -46,7 +48,7 @@ public class QProgressingMission extends EntityPathBase<ProgressingMission> {
 
     public QProgressingMission(Class<? extends ProgressingMission> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.mission = inits.isInitialized("mission") ? new QMission(forProperty("mission")) : null;
+        this.mission = inits.isInitialized("mission") ? new QMission(forProperty("mission"), inits.get("mission")) : null;
         this.user = inits.isInitialized("user") ? new umc.spring.domain.user.QUsers(forProperty("user")) : null;
     }
 

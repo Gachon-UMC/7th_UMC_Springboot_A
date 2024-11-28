@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import umc.spring.domain.mission.ProgressStatus;
 import umc.spring.domain.mission.ProgressingMission;
 import umc.spring.domain.user.Users;
 import umc.spring.dto.UserRegisterDto;
@@ -37,10 +38,12 @@ public class UserService {
         Page<ProgressingMission> progressingMissionPage = progressingMissionRepository.findByUserId(user.getId(), PageRequest.of(page, size));
 
         List<ProgressingMissionResponseDto.MissionPreviewDto> missionList = progressingMissionPage.getContent().stream()
+                .filter(progressingMission -> progressingMission.getStatus() != ProgressStatus.COMPLETED) // COMPLETED 제외
                 .map(progressingMission -> ProgressingMissionResponseDto.MissionPreviewDto.builder()
-                        .description(progressingMission.getMission().getDescription()) // 미션 설명
-                        .missionPoint(progressingMission.getMission().getMissionPoint()) // 미션 포인트
-                        .createdAt(progressingMission.getMission().getCreatedAt()) // 생성일
+                        .description(progressingMission.getMission().getDescription())
+                        .missionPoint(progressingMission.getMission().getMissionPoint())
+                        .createdAt(progressingMission.getMission().getCreatedAt())
+                        .status(progressingMission.getStatus()) // 상태 추가
                         .build())
                 .toList();
 
@@ -53,4 +56,5 @@ public class UserService {
                 .isLast(progressingMissionPage.isLast())
                 .build();
     }
+
 }
