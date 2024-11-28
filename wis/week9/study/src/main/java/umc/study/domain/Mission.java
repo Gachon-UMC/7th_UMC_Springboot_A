@@ -38,7 +38,7 @@ public class Mission extends BaseEntity {
     private MissionStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "store_id")
+    @JoinColumn(name = "store_id", nullable = false)
     private Store store;
 
     @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)

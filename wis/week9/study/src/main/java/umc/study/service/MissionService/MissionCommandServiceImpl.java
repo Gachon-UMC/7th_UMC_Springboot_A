@@ -12,6 +12,8 @@ import umc.study.repository.StoreRepository.StoreRepository;
 import umc.study.web.dto.MissionRequestDTO;
 import umc.study.web.dto.MissionResponseDTO;
 
+import java.time.LocalDate;
+
 @Service
 @RequiredArgsConstructor
 public class MissionCommandServiceImpl implements MissionCommandService {
@@ -25,7 +27,9 @@ public class MissionCommandServiceImpl implements MissionCommandService {
         Store store = storeRepository.findById(storeId)
                 .orElseThrow(() -> new RuntimeException("Store not found")); // Replace with custom exception
 
-        MissionStatus missionStatus = MissionConverter.getMissionStatus(request.getStatus());
+        MissionStatus missionStatus = request.getDueDate().isAfter(LocalDate.now())
+                ? MissionStatus.CHALLENGING
+                : MissionStatus.COMPLETE;
 
         Mission mission = Mission.builder()
                 .title(request.getTitle())

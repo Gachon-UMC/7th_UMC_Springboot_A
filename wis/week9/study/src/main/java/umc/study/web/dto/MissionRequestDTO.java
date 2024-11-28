@@ -10,19 +10,19 @@ import java.time.LocalDate;
 
 @Getter
 public class MissionRequestDTO {
-    @NotBlank
+    @NotBlank(message = "Title cannot be blank")
     private String title;
 
-    @NotBlank
+    @NotBlank(message = "Description cannot be blank")
     private String description;
 
-    @NotNull
+    @NotNull(message = "Point value is required")
     private Integer point;
 
-    @NotNull
+    @NotNull(message = "Due date is required")
     private LocalDate dueDate;
 
-    @NotNull
-    private Integer status; // 1: CHALLENGING, 2: COMPLETE
+//    @NotNull(message = "Store ID is required")
+//    private Long storeId;
 }
 
