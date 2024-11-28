@@ -14,6 +14,7 @@ import umc.study.apiPayload.ApiResponse;
 import umc.study.converter.StoreConverter;
 import umc.study.domain.Review;
 import umc.study.service.StoreService.StoreQueryService;
+import umc.study.validation.annotation.CheckPage;
 import umc.study.validation.annotation.ValidStore;
 import umc.study.web.dto.StoreResponseDTO;
 
@@ -33,13 +34,15 @@ public class StoreRestController {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "AUTH006", description = "acess 토큰 모양이 이상함",content = @Content(schema = @Schema(implementation = ApiResponse.class))),
     })
     @Parameters({
-            @Parameter(name = "storeId", description = "가게의 아이디, path variable 입니다!")
+            @Parameter(name = "storeId", description = "가게의 아이디, path variable 입니다!"),
+            @Parameter(name = "page", description = "페이지 번호 (1부터 시작)")
     })
     public ApiResponse<StoreResponseDTO.ReviewPreViewListDTO> getReviewList(
             @ValidStore @PathVariable(name = "storeId") Long storeId,
-            @RequestParam(name = "page") Integer page
+            @CheckPage @RequestParam(name = "page") Integer page
     ){
-        Page<Review> reviewList = storeQueryService.getReviewList(storeId,page);
+        Page<Review> reviewList = storeQueryService.getReviewList(storeId, page - 1);
+
         return ApiResponse.onSuccess(StoreConverter.reviewPreViewListDTO(reviewList));
     }
 }
