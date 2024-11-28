@@ -26,3 +26,4 @@ public class UserQueryServiceImpl implements UserQueryService{
         return UserPage;
     }
 }
+
