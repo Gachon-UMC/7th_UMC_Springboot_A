@@ -1,10 +1,8 @@
 package umc.spring.domain.mission;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.Market;
 import umc.spring.global.BaseEntity;
 
 @Entity
@@ -20,4 +18,8 @@ public class Mission extends BaseEntity {
     private String description;
 
     private Integer missionPoint;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "market_id") // 외래 키 설정
+    private Market market;
 }
