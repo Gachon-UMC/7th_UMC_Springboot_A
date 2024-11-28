@@ -54,7 +54,7 @@ public class Mission{
 	private List<UserMission> userMissionList = new ArrayList<>();
 
 	@Builder
-	public Mission(Store store, int point, String content, int dueDate) {
+	private Mission(Store store, int point, String content, int dueDate) {
 		this.store = store;
 		this.point = point;
 		this.content = content;
