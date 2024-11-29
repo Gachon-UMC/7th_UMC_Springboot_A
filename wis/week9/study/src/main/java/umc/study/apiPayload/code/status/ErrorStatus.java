@@ -18,8 +18,8 @@ public enum ErrorStatus implements BaseErrorCode {
 
 
     // 멤버 관려 에러
-    MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBER4001", "사용자가 없습니다."),
-    NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MEMBER4002", "닉네임은 필수 입니다."),
+    USER_NOT_FOUND(HttpStatus.BAD_REQUEST, "USER4001", "사용자가 없습니다."),
+    NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "USER4002", "닉네임은 필수 입니다."),
 
     // 예시,,,
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
@@ -31,7 +31,10 @@ public enum ErrorStatus implements BaseErrorCode {
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD4001", "해당 음식 카테고리를 찾을 수 없습니다."),
 
     // 페이징 관련 에러
-    INVALID_PAGE_REQUEST(HttpStatus.BAD_REQUEST, "PAGING4001", "페이지 번호는 1 이상의 정수여야 합니다.");
+    INVALID_PAGE_REQUEST(HttpStatus.BAD_REQUEST, "PAGING4001", "페이지 번호는 1 이상의 정수여야 합니다."),
+
+    // 미션 관련 에러
+    ONGOING_MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4002", "진행 중인 미션을 찾을 수 없습니다.");
 
     private final HttpStatus httpStatus;
     private final String code;

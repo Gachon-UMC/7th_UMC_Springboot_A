@@ -9,13 +9,13 @@ import umc.study.apiPayload.code.ErrorReasonDTO;
 @AllArgsConstructor
 public class GeneralException extends RuntimeException {
 
-    private BaseErrorCode code;
+    private final BaseErrorCode code;
 
     public ErrorReasonDTO getErrorReason() {
         return this.code.getReason();
     }
 
-    public ErrorReasonDTO getErrorReasonHttpStatus(){
+    public ErrorReasonDTO getErrorReasonHttpStatus() {
         return this.code.getReasonHttpStatus();
     }
 }

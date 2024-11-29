@@ -21,6 +21,7 @@ public class UserMission extends BaseEntity {
     @Column(nullable = false)
     private Long verificationCode;
 
+    @Setter
     @Enumerated(EnumType.STRING)
     private MissionStatus status;
 

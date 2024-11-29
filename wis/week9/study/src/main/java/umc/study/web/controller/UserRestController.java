@@ -18,7 +18,6 @@ import umc.study.domain.Mission;
 import umc.study.domain.Review;
 import umc.study.domain.User;
 import umc.study.domain.enums.MissionStatus;
-import umc.study.domain.mapping.UserMission;
 import umc.study.service.UserMissionService.UserMissionQueryService;
 import umc.study.service.UserService.UserCommandService;
 import umc.study.service.UserService.UserQueryService;
@@ -34,9 +33,7 @@ import umc.study.web.dto.UserResponseDTO;
 public class UserRestController {
 
     private final UserCommandService userCommandService;
-
     private final UserQueryService userQueryService;
-
     private final UserMissionQueryService userMissionQueryService;
 
     @PostMapping("/")
