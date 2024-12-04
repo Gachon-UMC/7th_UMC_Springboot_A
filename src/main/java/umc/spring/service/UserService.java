@@ -3,6 +3,7 @@ package umc.spring.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.spring.domain.mission.ProgressStatus;
@@ -23,10 +24,12 @@ public class UserService {
     private final UsersRepository usersRepository;
     private final UsersConverter usersConverter;
     private final ProgressingMissionRepository progressingMissionRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public Users createUser(UserRegisterDto request) {
         Users user = usersConverter.toEntity(request);
+        user.encodePassword(passwordEncoder.encode(request.getPassword()));
         return usersRepository.save(user);
     }
 

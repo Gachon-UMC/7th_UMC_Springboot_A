@@ -16,7 +16,11 @@ public class UsersConverter {
                 .address(request.getAddress())
                 .phoneNum(request.getPhoneNum())
                 .userType(request.getUserType())
+
                 .email(request.getEmail())
+                .password(request.getPassword())
+                .role(request.getRole())
+
                 .point(request.getPoint() != null ? request.getPoint() : 0)
                 .pushNewEvent(AlarmStatus.valueOf(request.getPushNewEvent()))
                 .pushReviewAnswer(AlarmStatus.valueOf(request.getPushReviewAnswer()))

@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import umc.spring.domain.user.Gender;
+import umc.spring.domain.user.Role;
 import umc.spring.domain.user.UserType;
 
 import java.time.LocalDate;
@@ -36,6 +37,9 @@ public class UserRegisterDto {
     @NotBlank
     private String email;
 
+    @NotBlank
+    private String password;
+
     private Integer point;
 
     @NotNull
@@ -46,4 +50,7 @@ public class UserRegisterDto {
 
     @NotNull
     private String pushInquiryAnswer;
+
+    @NotNull
+    Role role;
 }

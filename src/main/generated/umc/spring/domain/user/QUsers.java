@@ -43,6 +43,8 @@ public class QUsers extends EntityPathBase<Users> {
 
     public final StringPath name = createString("name");
 
+    public final StringPath password = createString("password");
+
     public final StringPath phoneNum = createString("phoneNum");
 
     public final NumberPath<Integer> point = createNumber("point", Integer.class);
@@ -56,6 +58,8 @@ public class QUsers extends EntityPathBase<Users> {
     public final EnumPath<umc.spring.domain.Alarm.AlarmStatus> pushReviewAnswer = createEnum("pushReviewAnswer", umc.spring.domain.Alarm.AlarmStatus.class);
 
     public final ListPath<umc.spring.domain.review.Review, umc.spring.domain.review.QReview> reviewList = this.<umc.spring.domain.review.Review, umc.spring.domain.review.QReview>createList("reviewList", umc.spring.domain.review.Review.class, umc.spring.domain.review.QReview.class, PathInits.DIRECT2);
+
+    public final EnumPath<Role> role = createEnum("role", Role.class);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;

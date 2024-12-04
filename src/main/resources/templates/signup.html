@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+<h2>Sign Up</h2>
+<form th:action="@{/members/signup}" method="post">
+    <!-- Name -->
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required th:value="${memberJoinDto.name}">
+    </div>
+
+    <!-- Gender -->
+    <div>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="MALE" th:selected="${memberJoinDto.gender == 'MALE'}">Male</option>
+            <option value="FEMALE" th:selected="${memberJoinDto.gender == 'FEMALE'}">Female</option>
+        </select>
+    </div>
+
+    <!-- Birth -->
+    <div>
+        <label for="birth">Date of Birth:</label>
+        <input type="date" id="birth" name="birth" required th:value="${memberJoinDto.birth}">
+    </div>
+
+    <!-- Address -->
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required th:value="${memberJoinDto.address}">
+    </div>
+
+    <!-- Phone Number -->
+    <div>
+        <label for="phoneNum">Phone Number:</label>
+        <input type="text" id="phoneNum" name="phoneNum" required th:value="${memberJoinDto.phoneNum}">
+    </div>
+
+    <!-- User Type -->
+    <div>
+        <label for="userType">User Type:</label>
+        <select id="userType" name="userType" required>
+            <option value="CUSTOMER" th:selected="${memberJoinDto.userType == 'CUSTOMER'}">Customer</option>
+            <option value="OWNER" th:selected="${memberJoinDto.userType == 'OWNER'}">Owner</option>
+        </select>
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required th:value="${memberJoinDto.email}">
+    </div>
+
+    <!-- Password -->
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+
+    <!-- Role -->
+    <div>
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="ADMIN" th:selected="${memberJoinDto.role == 'ADMIN'}">Admin</option>
+            <option value="USER" th:selected="${memberJoinDto.role == 'USER'}">User</option>
+        </select>
+    </div>
+
+    <!-- Alarm Preferences -->
+    <div>
+        <label for="pushNewEvent">Push Notifications - New Events:</label>
+        <select id="pushNewEvent" name="pushNewEvent" required>
+            <option value="ON" th:selected="${memberJoinDto.pushNewEvent == 'ON'}">On</option>
+            <option value="OFF" th:selected="${memberJoinDto.pushNewEvent == 'OFF'}">Off</option>
+        </select>
+    </div>
+    <div>
+        <label for="pushReviewAnswer">Push Notifications - Review Answer:</label>
+        <select id="pushReviewAnswer" name="pushReviewAnswer" required>
+            <option value="ON" th:selected="${memberJoinDto.pushReviewAnswer == 'ON'}">On</option>
+            <option value="OFF" th:selected="${memberJoinDto.pushReviewAnswer == 'OFF'}">Off</option>
+        </select>
+    </div>
+    <div>
+        <label for="pushInquiryAnswer">Push Notifications - Inquiry Answer:</label>
+        <select id="pushInquiryAnswer" name="pushInquiryAnswer" required>
+            <option value="ON" th:selected="${memberJoinDto.pushInquiryAnswer == 'ON'}">On</option>
+            <option value="OFF" th:selected="${memberJoinDto.pushInquiryAnswer == 'OFF'}">Off</option>
+        </select>
+    </div>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+<!-- Error Message -->
+<p th:if="${error}">회원가입 중 문제가 발생했습니다: <span th:text="${error}"></span></p>
+
+<p>계정이 있나요? <a th:href="@{/login}">Login</a></p>
+</body>
+</html>

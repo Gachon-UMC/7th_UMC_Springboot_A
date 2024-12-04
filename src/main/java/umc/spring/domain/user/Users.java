@@ -39,7 +39,14 @@ public class Users extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     private Integer point;
 
@@ -67,4 +74,8 @@ public class Users extends BaseEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Inquiry> inquiryList = new ArrayList<>();
 
+
+    public void encodePassword(String password) {
+        this.password = password;
+    }
 }
