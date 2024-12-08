@@ -50,16 +50,11 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-sourceSets {
-	main {
-		java {
-			srcDirs = ['src/main/java', 'src/main/resources']
-		}
-	}
+tasks.named('compileQuerydsl') {
+	options.annotationProcessorPath = configurations.annotationProcessor
 }
 
-// Querydsl 설정부
-def generated = 'src/main/generated'
+def generated = file("src/main/generated") // 경로를 file()로 명확히 지정
 
 querydsl {
 	jpa = true
@@ -67,8 +62,13 @@ querydsl {
 }
 
 sourceSets {
-	main.java.srcDir generated
+	main {
+		java {
+			srcDirs += ['src/main/java', 'src/main/resources', generated]
+		}
+	}
 }
+
 
 compileQuerydsl{
 	options.annotationProcessorPath = configurations.querydsl

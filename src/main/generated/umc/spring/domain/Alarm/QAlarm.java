@@ -59,7 +59,7 @@ public class QAlarm extends EntityPathBase<Alarm> {
     public QAlarm(Class<? extends Alarm> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.inquiry = inits.isInitialized("inquiry") ? new umc.spring.domain.inquiry.QInquiry(forProperty("inquiry"), inits.get("inquiry")) : null;
-        this.mission = inits.isInitialized("mission") ? new umc.spring.domain.mission.QMission(forProperty("mission")) : null;
+        this.mission = inits.isInitialized("mission") ? new umc.spring.domain.mission.QMission(forProperty("mission"), inits.get("mission")) : null;
         this.user = inits.isInitialized("user") ? new umc.spring.domain.user.QUsers(forProperty("user")) : null;
     }
 
