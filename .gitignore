@@ -37,3 +37,9 @@ out/
 .vscode/
 .DS_Store
 application.yml
+
+### Media Files ###
+*.mp4
+*.avi
+*.mp3
+*.wav
